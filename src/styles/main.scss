@@ -1,6 +1,5 @@
 @import '~bulma/bulma.sass';
 @import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
-
 @font-face {
   font-family: 'Graphique';
   src: url('./fonts/Graphique\ W01\ Regular.ttf');
@@ -54,7 +53,6 @@ div {
   align-items: center;
   width: 45vw;  
   max-width: 350px;  
-  min-width: 300px;
 }
 .card img {
   width: 40vw;
@@ -62,7 +60,6 @@ div {
   
 }
 .card-container {
-  flex-shrink: 4;
   align-items: center;
   display: flex;
   text-align: center;
@@ -105,15 +102,11 @@ div {
   height: 200px;
 
 }
-
-
 .congrats { 
   background-image: url('https://media.giphy.com/media/bb0Xwo6UoHTPy/giphy.gif');
   background-size: cover; 
   background-repeat: no-repeat;
- }
-
-
+}
 //* CSS for Problem Page
 div.hero-body div.container.has-text-centered {
   font-family: Graphique;

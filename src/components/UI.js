@@ -1,46 +1,70 @@
 import React from 'react'
 
 import { getMovie } from '../lib/api'
-import { logState } from '../lib/logger'
+// import { logState } from '../lib/logger'
 import { Link } from 'react-router-dom'
 
 class UI extends React.Component {
 
+  // movie: will hold the result of the api request
+  // moviesLeft holds the counter to be decreased every time the main function is run
   state = {
     movie: null,
     moviesLeft: 5
   }
   
+  // asyncfunction as it makes the api request
   getRandomMovie = async () => {
+  
+    // if moviesLeft is false - make current page the /problempage - props.history.push adds a new page to the end of page history (making it the current)
     if (!this.state.moviesLeft) {
-      this.props.history.push('/problempage')
+      this.props.history.push('/problempage') 
       return 
     }
+
+    // make variable that holds a random number to append to the api request as the imdb ID number
     const randomIndex = Math.floor(Math.random() * 9000000)
+
+    //first clear the current state 
     this.setState( { movie: null } )
     try {
       console.log('tt' + randomIndex)
+      //get request from function in api.js
       const res = await getMovie('tt' + randomIndex)
 
+
+      //conditionals that check the resposnse meets our conditons - if met, set state from the result.
       if (res.data.Response === 'True' && res.data.Type === 'movie' && res.data.Poster !== 'N/A') {
+        // moviesLeft is reduced by 1 each time
         const moviesLeft = this.state.moviesLeft - 1
         return this.setState( { movie: res.data, moviesLeft } )
       } 
+      // if any conditions return false, the function calls itself again - RECURSION - func will call itself infinitely till it is true
       return this.getRandomMovie()
     } catch (error) {
       console.log('something went wrong', error)
     }
   }
 
+
+  // on mount, runs getRandomMovie function with the api request etc
+
   componentDidMount() {
     this.getRandomMovie()
   }
 
 
+
+
   render() {
+
+    //return statement starts with conditional for if there is a state set - run that, if not, clear it and only show the   
+    //spinner section (at bottom) - so when function runs the first line sets state to null and spinner shows till state i set
 
     return (
       <>
+
+        
         {this.state.movie ? 
 
           <section className="hero is-fullheight UI">

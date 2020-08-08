@@ -13,8 +13,7 @@ const Home = () => (
           </Animated>
           <Animated animationIn="fadeInUp" animationInDelay="1000"isVisible={true}>
             <Link to="/UI" className="button main-button is-large">YOU WILL WATCH ...</Link>   
-          </Animated>
-          
+          </Animated>         
         </div>
       </div>
     </section>
