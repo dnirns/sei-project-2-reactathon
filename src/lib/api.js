@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // variables holding strings of each half of url - to insert the IMDb ID number within
-const baseURL = 'www.omdbapi.com/?i='
+const baseURL = 'https://www.omdbapi.com/?i='
 const apiKeyURL = '&apikey='
 
 
