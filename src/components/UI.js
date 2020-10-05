@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { getMovie } from '../lib/api'
-// import { logState } from '../lib/logger'
 import { Link } from 'react-router-dom'
 
 class UI extends React.Component {
@@ -26,10 +25,10 @@ class UI extends React.Component {
     const randomIndex = Math.floor(Math.random() * 9000000)
 
     //first clear the current state 
+    //get request from function in api.js
     this.setState( { movie: null } )
     try {
-      console.log('tt' + randomIndex)
-      //get request from function in api.js
+      console.log('tt' + randomIndex)     
       const res = await getMovie('tt' + randomIndex)
 
 
