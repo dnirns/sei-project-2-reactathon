@@ -1,6 +1,5 @@
-
 # General Assembly SEI Project 2 - ‘Director Dictator’ 🎬
-
+#General-Assembly/read-me’s
 
 ## Technical Brief:
 * Group hacakthon in 48hours.
@@ -28,8 +27,8 @@ Luckily we were able to source a list of **all** of the titles from the IMDB dat
 The next issue we had, was that there were over 7,000,0000 titles, and they an unsorted list of films, TV shows, shorts and more. Nor did all of them have info that we wanted, like poster art for example. To get around this we had to include a series of conditional statements to ensure that responses we were getting back from our requests matched the criteria that we needed.
 
 ## Resources:
-[The Open Movie Database](https://www.omdbapi.com/)
-[IMDB](https://www.imdb.com/)
+* [The Open Movie Database](https://www.omdbapi.com/)
+* [IMDB](https://www.imdb.com/)
 
 ## The team:
 
@@ -38,4 +37,5 @@ The project was a team effort along with [tams2429 · GitHub](https://github.com
 ## Deployed Site:
 
 [Director Dictator](https://director-dictator.netlify.app/)
+
 
