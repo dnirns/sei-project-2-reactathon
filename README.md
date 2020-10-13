@@ -13,6 +13,14 @@
 * Insomnia.
 * OMDB API (The Online Movie Database).
 
+## Demo:
+
+![demo-1](./src/assets/readme-gifs/project-2-demo-1.gif)
+
+![demo-2](./src/assets/readme-gifs/project-2-demo-2.gif)
+
+![demo-3](./src/assets/readme-gifs/project-2-demo-3.gif)
+
 ## Overview:
 Working in a group of three, we came up with the concept of an app that attempted to deal with the indecision that can accompany an excess of choice when picking a film to watch online. The idea was to try and randomly generate a finite selection of films for the user to choose from. They would be presented with them one at a time and have 5 chances to accept before they ran out of options and were doomed to watch the final selection they were presented with.
 
