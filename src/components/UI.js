@@ -11,24 +11,23 @@ class UI extends React.Component {
     movie: null,
     moviesLeft: 5
   }
-  
+
   // asyncfunction as it makes the api request
   getRandomMovie = async () => {
-  
+
     // if moviesLeft is false - make current page the /problempage - props.history.push adds a new page to the end of page history (making it the current)
     if (!this.state.moviesLeft) {
-      this.props.history.push('/problempage') 
-      return 
+      this.props.history.push('/problempage')
+      return
     }
 
     // make variable that holds a random number to append to the api request as the imdb ID number
     const randomIndex = Math.floor(Math.random() * 9000000)
 
-    //first clear the current state 
+    //first clear the current state
     //get request from function in api.js
     this.setState( { movie: null } )
     try {
-      console.log('tt' + randomIndex)     
       const res = await getMovie('tt' + randomIndex)
 
 
@@ -37,7 +36,7 @@ class UI extends React.Component {
         // moviesLeft is reduced by 1 each time
         const moviesLeft = this.state.moviesLeft - 1
         return this.setState( { movie: res.data, moviesLeft } )
-      } 
+      }
       // if any conditions return false, the function calls itself again - RECURSION - func will call itself infinitely till it is true
       return this.getRandomMovie()
     } catch (error) {
@@ -57,23 +56,23 @@ class UI extends React.Component {
 
   render() {
 
-    //return statement starts with conditional for if there is a state set - run that, if not, clear it and only show the   
+    //return statement starts with conditional for if there is a state set - run that, if not, clear it and only show the
     //spinner section (at bottom) - so when function runs the first line sets state to null and spinner shows till state i set
 
     return (
       <>
 
-        
-        {this.state.movie ? 
+
+        {this.state.movie ?
 
           <section className="hero is-fullheight UI">
             <div className="hero-body">
               <div className="columns">
                 <div className="column">
                   <button onClick={this.getRandomMovie} className="next-movie button is-danger">LOOKS CRAP</button>
-                </div>      
+                </div>
                 <div className="column">
-                  <div className="card-container">              
+                  <div className="card-container">
                     <div className="card is-flex">
                       <div className="movie-title heading">
                         <h1>{this.state.movie.Title}</h1>
@@ -88,7 +87,7 @@ class UI extends React.Component {
                           <p>IMDB rating: {this.state.movie.imdbRating}</p>
                         </div>
                       </div>
-                      <div className="selection-buttons"> 
+                      <div className="selection-buttons">
                       </div>
                     </div>
                   </div>
@@ -116,9 +115,9 @@ class UI extends React.Component {
                 </div>
               </div>
             </div>
-          </section>         
+          </section>
         }
-      </>            
+      </>
     )
   }
 }
