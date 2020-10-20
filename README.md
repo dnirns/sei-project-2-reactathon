@@ -6,7 +6,7 @@
 
 ## The team:
 
-The project was a team effort along with Siu Kei Tam [Siu Kei Tam ](https://github.com/tams2429) and [Dan Price](https://github.com/Zarathustrah)
+The project was a team effort along with [Siu Kei Tam ](https://github.com/tams2429) and [Dan Price](https://github.com/Zarathustrah)
 
 
 ## Overview:
@@ -74,6 +74,14 @@ Being able to work with others on these new ideas and pair code to share ideas a
 
 I was able to work equally on both the logical elements of the API requests and user interface, as well as styling the CSS and working on things like conditional rendering.
 
+
+## Possible Future Features:
+
+If we had more time, a few minor things we might have added would have been:
+
+ * Sound effects.
+ * Some more animations.
+ * Fine tuning some layout specifics.
 
 
 ## Demo:
